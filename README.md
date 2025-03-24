@@ -1,6 +1,6 @@
 # Password Generator
 
-![image](https://github.com/user-attachments/assets/efac5ee8-7b2c-435d-8720-dc6e8d75de5d)
+![image](https://github.com/user-attachments/assets/d890cf74-b6d0-493b-ab92-56618a1e60af)
 
 ## Overview
 
