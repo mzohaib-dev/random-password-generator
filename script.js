@@ -266,3 +266,8 @@ generateBtn.addEventListener("click", () => {
   //paswword bn ka bad strength bhi call krni padegi
   calculateStrength();
 });
+
+// Generate password when page loads
+window.addEventListener("load", () => {
+  generateBtn.click();
+});

@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Random Password Genertor</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- wrapper -->
@@ -25,7 +26,7 @@
             readonly
             type="text"
             placeholder="Password"
-            class="Display"
+            class="Display typing-animation"
             data-passwordDisplay
           />
 
@@ -65,19 +66,19 @@
           <div class="checkboxgroup">
             <div class="check">
               <input type="checkbox" id="uppercase" checked/>
-              <label for="uppercase">Include Uppercase letters</label>
+              <label for="uppercase">ABC</label>
             </div>
             <div class="check">
               <input type="checkbox" id="lowercase" checked/>
-              <label for="lowercase">Include Lowercase letters</label>
+              <label for="lowercase">abc</label>
             </div>
             <div class="check">
               <input type="checkbox" id="numbers" checked/>
-              <label for="numbers">Include Numbers</label>
+              <label for="numbers">123</label>
             </div>
             <div class="check">
               <input type="checkbox" id="symbols" />
-              <label for="symbols">Include Symbols</label>
+              <label for="symbols">#$&</label>
             </div>
           </div>
 

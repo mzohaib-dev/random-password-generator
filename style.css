@@ -4,31 +4,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
+  font-family: "Poppins", sans-serif; /* Changed font to Poppins for a modern look */
 }
 
 :root {
-  /* gloabal csss */
-
-  --dk-red: hsl(0, 76%, 44%);
-
-  --dk-violet: hsl(268, 75%, 9%);
-  --lt-violet: hsl(268, 47%, 21%);
-  --lt-violet2: hsl(281, 89%, 26%);
-  --vb-violet: hsl(285, 91%, 52%);
-  --vb-violet2: hsl(290, 70%, 36%);
-
-  --vb-yellow: hsl(52, 100%, 62%);
-
-  --pl-white: hsl(0, 0%, 100%);
-
-  --vb-cyan: hsl(176, 100%, 44%);
-  --vb-cyan2: hsl(177, 92%, 70%);
-
-  --dk-text: hsl(198, 20%, 13%);
+  /* New color scheme */
+  --primary-dark: hsl(210, 40%, 15%); /* Deep blue background */
+  --primary-light: hsl(190, 70%, 55%); /* Teal accent */
+  --secondary-dark: hsl(210, 30%, 25%); /* Darker blue for containers */
+  --accent-white: hsl(0, 0%, 95%); /* Off-white for text */
+  --highlight: hsl(160, 80%, 50%); /* Bright teal for interactive elements */
+  --shadow: rgba(0, 0, 0, 0.2);
 }
-
-/* * https: //angrytools.com/gradient/ */
 
 body {
   width: 100vw;
@@ -38,38 +25,40 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(
-    231deg,
-    rgba(22, 6, 40, 1) 0%,
-    rgba(52, 28, 79, 1) 50%,
-    rgba(88, 7, 125, 1) 100%
+    135deg,
+    var(--primary-dark) 0%,
+    var(--secondary-dark) 100%
   );
   overflow-y: hidden;
 }
 
 .container {
   width: 90%;
-  max-width: 450px;
+  max-width: 500px; /* Slightly wider container */
+  background: var(--secondary-dark);
+  padding: 2rem;
+  border-radius: 1.5rem; /* Softer corners */
+  box-shadow: 0 10px 30px var(--shadow);
 }
 
 h1 {
-  color: var(--pl-white);
-  opacity: 0.75;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 1.2;
+  color: var(--accent-white);
+  opacity: 0.9;
+  text-transform: capitalize; /* Less aggressive than uppercase */
+  letter-spacing: 1px;
+  font-size: 2rem;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* dispay containre */
-
+/* Display container */
 .display-container {
   position: relative;
-  background-color: var(--dk-violet);
-  border-radius: 1rem;
-  border-bottom: 0.35rem solid var(--lt-violet2);
-
+  background-color: var(--primary-dark);
+  border-radius: 0.75rem;
   margin: 1rem 0;
-  padding-top: 0.35rem;
+  padding: 0.5rem;
+  border: 2px solid var(--primary-light);
 }
 
 .Display {
@@ -77,200 +66,185 @@ h1 {
   background-color: transparent;
   outline: none;
   border: none;
-
-  padding: 1.15rem 1rem;
-  color: var(--vb-yellow);
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 30px;
-  letter-spacing: 1px;
-  padding-right: 3.25rem;
+  padding: 0.5rem 1rem;
+  color: var(--highlight);
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
 }
 
 .Display::placeholder {
-  position: absolute;
+  color: var(--primary-light);
+  opacity: 0.7;
+  font-size: 1.25rem;
   top: 50%;
-  left: 1.5rem;
-  font-size: 1.5rem;
-  line-height: 30px;
-  color: var(--vb-yellow);
-  opacity: 0.65;
-  text-transform: uppercase;
+  left: 1rem;
   transform: translateY(-50%);
 }
 
 .display-container button {
   position: absolute;
   top: 50%;
-  right: 1.5rem;
+  right: 1rem;
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.display-container button:hover {
+  transform: translateY(-50%) scale(1.1);
 }
 
 .input-container {
   width: 100%;
-  background-color: var(--dk-violet);
-  padding: 2rem;
-  border-radius: 1rem;
-  border-bottom: 0.35rem solid var(--lt-violet2);
+  background-color: transparent; /* No background for input container */
 }
 
 .length-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .length-container p:nth-child(1) {
-  color: var(--pl-white);
-  font-size: 1.5rem;
+  color: var(--accent-white);
+  font-size: 1.25rem;
 }
 
 .length-container p:nth-child(2) {
-  color: var(--vb-yellow);
-  font-size: 1.5rem;
+  color: var(--highlight);
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .strengthcontainer {
   display: flex;
-  gap: 15px;
+  gap: 1rem;
   align-items: center;
-  margin-top: 1.7rem;
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
 }
 
 .strengthcontainer p {
-  color: var(--pl-white);
-  font-size: 1.5rem;
+  color: var(--accent-white);
+  font-size: 1.25rem;
 }
 
 .indicator {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
+  border: 2px solid var(--primary-light);
 }
 
 .generateButton {
   width: 100%;
-  padding: 1rem 0;
-  background-color: var(--vb-violet);
-  text-align: center;
+  padding: 1rem;
+  background-color: var(--primary-light);
   border-radius: 0.75rem;
-  border-bottom: 0.35rem solid var(--vb-yellow);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--vb-yellow);
+  border: none;
+  color: var(--primary-dark);
   font-weight: 600;
-  font-size: 1.25rem;
-
+  font-size: 1.1rem;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .generateButton:hover {
-  background-color: black;
+  background-color: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .check {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
-  gap: 0 1rem;
+  margin: 0.75rem 0;
+  gap: 0.75rem;
 }
 
 .check input {
-  /* appearance: none; default tarikha s abrowser style krega woh nhi chaiya */
-
   appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--vb-cyan);
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--primary-light);
   cursor: pointer;
+  border-radius: 4px;
   position: relative;
-  /* as tick ko uspa overlap krna hai */
-
-  border-radius: 0.35rem;
 }
 
 .check input:checked {
-  background-color: var(--vb-cyan);
+  background-color: var(--highlight);
+  border-color: var(--highlight);
 }
 
 .check input:checked::before {
   content: "✓";
   position: absolute;
-  color: var(--dk-text);
-  font-weight: 600;
-  font-size: 1.05rem;
+  color: var(--primary-dark);
+  font-size: 1rem;
   left: 50%;
-  top: -3.5px;
-  transform: translateX(-50%) translateY(9%);
-  z-index: 2;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .check label {
-  color: var(--pl-white);
-  font-size: 1.25rem;
-  letter-spacing: 0.75px;
+  color: var(--accent-white);
+  font-size: 1.1rem;
 }
 
 .slider {
-  position: relative;
   appearance: none;
   width: 100%;
-  height: 0.75rem;
+  height: 6px;
   cursor: pointer;
-  background-color: var(--lt-violet);
-  border-radius: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  background-image: linear-gradient(var(--vb-violet), var(--vb-violet));
-  background-repeat: no-repeat;
+  background: var(--primary-dark);
+  border-radius: 3px;
+  margin: 1rem 0;
+  outline: none;
 }
 
-/* slider thumb ko acess */
 .slider::-webkit-slider-thumb {
-  position: relative;
-
   appearance: none;
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 50%;
-  background-color: var(--vb-yellow);
+  background-color: var(--highlight);
   cursor: pointer;
-  margin-top: -3px;
-  box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.5);
-  transition: all 100ms ease-in-out;
-}
-
-.slider:focus {
-  outline: 3px solid var(--vb-yellow);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
 }
 
 .slider::-webkit-slider-thumb:hover {
-  outline: 2px solid var(--vb-yellow);
-  background-color: var(--dk-violet);
-  box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.8);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--highlight);
 }
 
 .copyBtn {
   cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.copyBtn:hover {
+  opacity: 1;
 }
 
 .copy-tooltip {
   position: absolute;
-  background-color: var(--vb-violet2);
-  color: var(--vb-yellow);
-  font-size: 1.25rem;
-  top: -35px;
-  left: -25px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 1rem;
+  top: -40px;
+  left: -20px;
   padding: 5px 10px;
-  border-radius: 1rem;
-  letter-spacing: 2px;
+  border-radius: 0.5rem;
   opacity: 0;
   transform: scale(0);
-  transform-origin: bottom;
-  transition: all 250ms ease-in-out;
+  transition: all 0.25s ease;
 }
 
 .copy-tooltip.active {
@@ -278,22 +252,39 @@ h1 {
   transform: scale(1);
 }
 
-/* //in case of mozilla firefox */
-
 .slider::-moz-range-thumb {
-  position: relative;
-  z-index: 1;
-  appearance: none;
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 50%;
-  background: var(--vb-yellow);
-  box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.5);
+  background: var(--highlight);
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .slider::-moz-range-thumb:hover {
-  outline: 2px solid var(--vb-yellow);
-  background-color: var(--dk-violet);
-  box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.8);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--highlight);
+}
+
+.typing-animation {
+  animation: typing 2s steps(20, end), blink-cursor 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-cursor {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--highlight);
+  }
 }
