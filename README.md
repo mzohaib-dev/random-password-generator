@@ -1,4 +1,5 @@
 # Password Generator
+![image](https://github.com/user-attachments/assets/03b497f1-751f-4817-af32-dbc8574d26c6)
 
 ## Overview
 
