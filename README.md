@@ -57,4 +57,3 @@ This project was developed after watching a tutorial video by LOVE BABBAR in Dot
 
 ---
 
-Feel free to replace "Gaurav Kumar" with your actual name, and adjust any other details as needed.
