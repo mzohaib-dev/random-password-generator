@@ -55,5 +55,3 @@ This project was developed after watching a tutorial video by LOVE BABBAR in Dot
 - CSS
 - JavaScript
 
----
-
